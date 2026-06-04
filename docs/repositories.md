@@ -1,6 +1,6 @@
 # Repositories
 
-All public code is hosted on GitHub at [github.com/mehmetyamac](https://github.com/mehmetyamac). Repositories are being released progressively alongside publications and platform milestones.
+All public code is hosted on GitHub at [github.com/ArtificialBrainStudio](https://github.com/ArtificialBrainStudio/GeometricAI). Repositories are being released progressively alongside publications and platform milestones.
 
 !!! note "Repositories are being made public progressively"
     Code for published and preprint work is released at time of submission. Additional libraries and demos will follow as the platform matures.

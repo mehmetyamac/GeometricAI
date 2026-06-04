@@ -1,6 +1,6 @@
 site_name: GeometricAI
 site_description: Modular, explainable, and controllable artificial brain systems
-site_url: https://mehmetyamac.github.io/GeometricAI/
+site_url: https://ArtificialBrainStudio.github.io/GeometricAI/
 
 theme:
   name: material
@@ -45,13 +45,13 @@ extra_css:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/mehmetyamac
+      link: https://github.com/ArtificialBrainStudio/GeometricAI
       name: GeometricAI on GitHub
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/geometric-ai-undercontrol/
       name: LinkedIn
     - icon: fontawesome/solid/globe
-      link: https://mehmetyamac.github.io/GeometricAI/
+      link: https://ArtificialBrainStudio.github.io/GeometricAI/
       name: Website
     - icon: fontawesome/regular/envelope
       link: mailto:mehmet.yamac@tuni.fi

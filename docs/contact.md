@@ -12,7 +12,7 @@
 -   :material-github:{ .lg .middle } **GitHub**
 
     ---
-    [github.com/mehmetyamac](https://github.com/mehmetyamac)
+    [github.com/ArtificialBrainStudio](https://github.com/ArtificialBrainStudio/GeometricAI)
 
 -   :fontawesome-brands-linkedin:{ .lg .middle } **LinkedIn**
 
