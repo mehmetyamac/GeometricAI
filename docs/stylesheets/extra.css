@@ -433,7 +433,47 @@ html { scroll-behavior: smooth; }
   .md-content { max-width: 54rem; }
 }
 
-/* ── 16. News timeline ──────────────────────────────── */
+/* ── 16. Light mode hero overrides ─────────────────── */
+[data-md-color-scheme="default"] .hero-banner {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% -5%, rgba(99, 102, 241, 0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 88% 110%, rgba(6, 182, 212, 0.07) 0%, transparent 55%),
+    #f5f5ff;
+  border-color: rgba(99, 102, 241, 0.18);
+}
+
+[data-md-color-scheme="default"] .hero-banner h1 {
+  background: linear-gradient(135deg, #1e1b4b 0%, #4f46e5 50%, #0891b2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-md-color-scheme="default"] .hero-banner p {
+  color: rgba(0, 0, 0, 0.58);
+}
+
+[data-md-color-scheme="default"] .hero-banner strong {
+  color: rgba(0, 0, 0, 0.82);
+}
+
+[data-md-color-scheme="default"] .hero-badge {
+  background: rgba(99, 102, 241, 0.09);
+  border-color: rgba(99, 102, 241, 0.22);
+  color: #4f46e5;
+}
+
+[data-md-color-scheme="default"] .hero-banner .md-button:not(.md-button--primary) {
+  border-color: rgba(99, 102, 241, 0.35);
+  color: #4f46e5;
+}
+
+[data-md-color-scheme="default"] .hero-banner .md-button:not(.md-button--primary):hover {
+  background: rgba(99, 102, 241, 0.07);
+  border-color: #4f46e5;
+}
+
+/* ── 17. News timeline ──────────────────────────────── */
 .news-timeline {
   position: relative;
   padding-left: 1.6rem;
@@ -487,13 +527,86 @@ html { scroll-behavior: smooth; }
   margin-top: 0.25rem;
 }
 
-/* ── 17. Light mode fallback ────────────────────────── */
+/* ── 17. Light mode – full sync ─────────────────────── */
+
+/* Cards */
 [data-md-color-scheme="default"] .md-typeset .grid.cards > :is(ul, ol) > li {
+  background: rgba(99, 102, 241, 0.03);
+  border: 1px solid rgba(99, 102, 241, 0.14);
   border-radius: var(--geo-radius);
-  transition: box-shadow 0.2s, transform 0.18s;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.18s;
 }
 
 [data-md-color-scheme="default"] .md-typeset .grid.cards > :is(ul, ol) > li:hover {
-  box-shadow: 0 6px 24px rgba(79, 70, 229, 0.14);
+  background: rgba(99, 102, 241, 0.07);
+  border-color: rgba(99, 102, 241, 0.32);
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.10);
   transform: translateY(-3px);
+}
+
+/* Tables */
+[data-md-color-scheme="default"] .md-typeset table:not([class]) {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid rgba(99, 102, 241, 0.16);
+  border-radius: var(--geo-radius);
+  overflow: hidden;
+}
+
+[data-md-color-scheme="default"] .md-typeset table:not([class]) th {
+  background: rgba(99, 102, 241, 0.07);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #4f46e5;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.16);
+}
+
+[data-md-color-scheme="default"] .md-typeset table:not([class]) tr:nth-child(even) {
+  background: rgba(99, 102, 241, 0.025);
+}
+
+[data-md-color-scheme="default"] .md-typeset table:not([class]) tr:hover {
+  background: rgba(99, 102, 241, 0.05);
+}
+
+/* Horizontal rules */
+[data-md-color-scheme="default"] .md-typeset hr {
+  border-color: rgba(99, 102, 241, 0.12);
+}
+
+/* Inline code */
+[data-md-color-scheme="default"] .md-typeset code {
+  background: rgba(99, 102, 241, 0.07);
+  border-radius: 4px;
+  color: #4338ca;
+}
+
+/* Admonitions */
+[data-md-color-scheme="default"] .md-typeset .admonition {
+  border-left-width: 3px;
+  border-radius: 0 var(--geo-radius-sm) var(--geo-radius-sm) 0;
+}
+
+/* News timeline */
+[data-md-color-scheme="default"] .news-timeline {
+  border-left-color: rgba(99, 102, 241, 0.25);
+}
+
+[data-md-color-scheme="default"] .news-item::before {
+  background: #6366f1;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+}
+
+[data-md-color-scheme="default"] .news-date {
+  color: #0891b2;
+}
+
+[data-md-color-scheme="default"] .news-item p:first-of-type strong {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+[data-md-color-scheme="default"] .news-item p + p {
+  color: rgba(0, 0, 0, 0.55);
 }

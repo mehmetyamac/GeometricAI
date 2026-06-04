@@ -76,7 +76,7 @@ GeometricAI is a Business Finland funded project operating from Tampere Universi
 
 -   **Basar Kaya**
 
-    *EU Market Development (Business Champion)*
+    *EU Market Development*
 
     ---
     Market study, EU customer validation, business model refinement and investor readiness.
