@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════════════════
-   GeometricAI – Modern dark theme
-   Palette: near-black bg · indigo-violet primary · cyan accent
+   GeometricAI – Theme
+   Palette: near-black · indigo-violet · cyan
    ══════════════════════════════════════════════════════ */
 
 /* ── 1. Brand tokens ─────────────────────────────────── */
@@ -10,12 +10,12 @@
   --geo-bg-elevated:  #10102a;
   --geo-bg-card:      rgba(99, 102, 241, 0.04);
 
-  --geo-primary:      #818cf8;          /* soft indigo   */
-  --geo-primary-mid:  #6366f1;          /* indigo        */
-  --geo-primary-deep: #4f46e5;          /* deep indigo   */
-  --geo-accent:       #22d3ee;          /* cyan          */
-  --geo-accent-soft:  #67e8f9;          /* light cyan    */
-  --geo-violet:       #a78bfa;          /* violet        */
+  --geo-primary:      #818cf8;
+  --geo-primary-mid:  #6366f1;
+  --geo-primary-deep: #4f46e5;
+  --geo-accent:       #22d3ee;
+  --geo-accent-soft:  #67e8f9;
+  --geo-violet:       #a78bfa;
 
   --geo-border:       rgba(99, 102, 241, 0.14);
   --geo-border-hover: rgba(99, 102, 241, 0.38);
@@ -26,7 +26,7 @@
   --geo-radius-sm:    8px;
 }
 
-/* ── 2. Override Material slate palette ──────────────── */
+/* ── 2. Material slate overrides ─────────────────────── */
 [data-md-color-scheme="slate"] {
   --md-default-bg-color:           var(--geo-bg);
   --md-default-bg-color--light:    var(--geo-bg-surface);
@@ -36,15 +36,11 @@
   --md-typeset-a-color:            var(--geo-violet);
   --md-typeset-mark-color:         rgba(99, 102, 241, 0.25);
 
-  /* Primary custom colours (primary: custom in palette) */
   --md-primary-fg-color:           var(--geo-primary);
   --md-primary-fg-color--light:    var(--geo-violet);
   --md-primary-fg-color--dark:     var(--geo-primary-deep);
 
-  /*
-   * Material uses --md-primary-bg-color as the TEXT colour on header/tabs.
-   * Must be light so text is visible on our dark header background.
-   */
+  /* Must be white: Material uses this as text colour on the header/tabs */
   --md-primary-bg-color:           #ffffff;
   --md-primary-bg-color--light:    rgba(255, 255, 255, 0.65);
 
@@ -52,9 +48,7 @@
   --md-accent-fg-color--transparent: rgba(34, 211, 238, 0.1);
 }
 
-/* ── 3. Page & header ────────────────────────────────── */
-
-/* Logo: horizontal layout (mark + text) */
+/* ── 3. Header & navigation ──────────────────────────── */
 .md-header__button.md-logo {
   padding: 0.05rem 0.8rem 0.05rem 0.3rem;
 }
@@ -64,7 +58,6 @@
   width: auto;
 }
 
-/* Allow header to grow to fit the larger logo */
 .md-header__inner {
   height: auto;
   min-height: 3rem;
@@ -72,20 +65,18 @@
   align-items: center;
 }
 
-/* Hide the Material-rendered site name text — logo image already carries it */
+/* Hide Material site name — logo image carries the brand text */
 .md-header__topic:first-child .md-ellipsis {
   display: none;
 }
 
-/* Hide the raw "GeometricAI" text node in the drawer header.
-   It's a direct text node so font-size:0 is the only CSS way to suppress it. */
+/* Hide site name text node in drawer (font-size:0 is required for raw text nodes) */
 .md-nav__title[for="__drawer"] {
   font-size: 0;
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
 }
 
-/* Restore size for the logo image and button inside */
 .md-nav__title[for="__drawer"] .md-nav__button,
 .md-nav__title[for="__drawer"] .md-logo {
   font-size: 1rem;
@@ -192,7 +183,7 @@
   transform: translateY(-1px);
 }
 
-/* ── 5. Hero badge ─────────────────────────────────── */
+/* ── 5. Hero badge ──────────────────────────────────── */
 .hero-badge {
   display: inline-block;
   background: rgba(99, 102, 241, 0.12);
@@ -239,7 +230,7 @@
   border-bottom-color: var(--geo-accent);
 }
 
-/* ── 7. Grid cards – glassmorphism ──────────────────── */
+/* ── 7. Grid cards ──────────────────────────────────── */
 [data-md-color-scheme="slate"] .md-typeset .grid.cards > :is(ul, ol) > li {
   background: var(--geo-bg-card);
   border: 1px solid var(--geo-border);
@@ -295,7 +286,7 @@
   background: rgba(99, 102, 241, 0.06);
 }
 
-/* ── 10. Code blocks ────────────────────────────────── */
+/* ── 10. Code ───────────────────────────────────────── */
 [data-md-color-scheme="slate"] .md-typeset pre {
   border: 1px solid var(--geo-border);
   border-radius: var(--geo-radius-sm);
@@ -315,7 +306,7 @@
   padding: 0;
 }
 
-/* ── 11. Tabs (content) ─────────────────────────────── */
+/* ── 11. Tabs ───────────────────────────────────────── */
 [data-md-color-scheme="slate"] .md-typeset .tabbed-labels > label {
   font-size: 0.85rem;
   font-weight: 500;
@@ -334,10 +325,22 @@
   border-top: 1px solid var(--geo-border);
 }
 
+.md-footer__link {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.15rem !important;
+}
+
+.md-footer-meta {
+  padding: 0 !important;
+}
+
 [data-md-color-scheme="slate"] .md-footer-meta {
   background: var(--geo-bg);
   border-top: 1px solid var(--geo-border);
-  padding: 0.9rem 0;
+}
+
+.md-footer-meta__inner {
+  padding: 0.35rem 0.6rem !important;
 }
 
 [data-md-color-scheme="slate"] .md-footer-meta__inner {
@@ -348,7 +351,6 @@
   gap: 0.75rem;
 }
 
-/* Copyright text */
 [data-md-color-scheme="slate"] .md-copyright {
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.45);
@@ -359,7 +361,6 @@
   font-weight: 600;
 }
 
-/* Social icons – plain, larger, no box */
 .md-social {
   display: flex;
   align-items: center;
@@ -424,7 +425,7 @@
   background: transparent;
 }
 
-/* ── 15. Global polish ──────────────────────────────── */
+/* ── 15. Global ─────────────────────────────────────── */
 html { scroll-behavior: smooth; }
 
 .md-content__inner { padding-bottom: 3.5rem; }
@@ -433,7 +434,7 @@ html { scroll-behavior: smooth; }
   .md-content { max-width: 54rem; }
 }
 
-/* ── 16. Light mode hero overrides ─────────────────── */
+/* ── 16. Light mode ─────────────────────────────────── */
 [data-md-color-scheme="default"] .hero-banner {
   background:
     radial-gradient(ellipse 70% 50% at 50% -5%, rgba(99, 102, 241, 0.10) 0%, transparent 65%),
@@ -473,63 +474,6 @@ html { scroll-behavior: smooth; }
   border-color: #4f46e5;
 }
 
-/* ── 17. News timeline ──────────────────────────────── */
-.news-timeline {
-  position: relative;
-  padding-left: 1.6rem;
-  margin: 1.5rem 0;
-}
-
-[data-md-color-scheme="slate"] .news-timeline {
-  border-left: 1px solid var(--geo-border);
-}
-
-.news-item {
-  position: relative;
-  padding-bottom: 1.75rem;
-}
-
-.news-item:last-child {
-  padding-bottom: 0;
-}
-
-[data-md-color-scheme="slate"] .news-item::before {
-  content: '';
-  position: absolute;
-  left: -1.97rem;
-  top: 0.5rem;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--geo-primary-mid);
-  box-shadow: 0 0 8px rgba(99, 102, 241, 0.55);
-}
-
-.news-date {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--geo-accent);
-  margin-bottom: 0.2rem;
-}
-
-.news-item p:first-of-type strong {
-  font-size: 0.975rem;
-  color: rgba(255, 255, 255, 0.88);
-}
-
-.news-item p + p {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.65;
-  margin-top: 0.25rem;
-}
-
-/* ── 17. Light mode – full sync ─────────────────────── */
-
-/* Cards */
 [data-md-color-scheme="default"] .md-typeset .grid.cards > :is(ul, ol) > li {
   background: rgba(99, 102, 241, 0.03);
   border: 1px solid rgba(99, 102, 241, 0.14);
@@ -544,7 +488,6 @@ html { scroll-behavior: smooth; }
   transform: translateY(-3px);
 }
 
-/* Tables */
 [data-md-color-scheme="default"] .md-typeset table:not([class]) {
   border-collapse: separate;
   border-spacing: 0;
@@ -571,42 +514,106 @@ html { scroll-behavior: smooth; }
   background: rgba(99, 102, 241, 0.05);
 }
 
-/* Horizontal rules */
 [data-md-color-scheme="default"] .md-typeset hr {
   border-color: rgba(99, 102, 241, 0.12);
 }
 
-/* Inline code */
 [data-md-color-scheme="default"] .md-typeset code {
   background: rgba(99, 102, 241, 0.07);
   border-radius: 4px;
   color: #4338ca;
 }
 
-/* Admonitions */
 [data-md-color-scheme="default"] .md-typeset .admonition {
   border-left-width: 3px;
   border-radius: 0 var(--geo-radius-sm) var(--geo-radius-sm) 0;
 }
 
-/* News timeline */
+
+/* ── 17. News timeline ──────────────────────────────── */
+.news-timeline {
+  position: relative;
+  padding-left: 1.6rem;
+  margin: 1.5rem 0 1.5rem 0.4rem;
+}
+
+[data-md-color-scheme="slate"] .news-timeline {
+  border-left: 1px solid var(--geo-border);
+}
+
 [data-md-color-scheme="default"] .news-timeline {
-  border-left-color: rgba(99, 102, 241, 0.25);
+  border-left: 1px solid rgba(99, 102, 241, 0.25);
 }
 
-[data-md-color-scheme="default"] .news-item::before {
+/* Dot on each title paragraph — centered on the border line */
+.news-timeline p:has(> strong:first-child) {
+  position: relative;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+[data-md-color-scheme="slate"] .news-timeline p:has(> strong:first-child)::before {
+  content: '';
+  position: absolute;
+  left: calc(-1.6rem - 3.5px);
+  top: 0.45rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--geo-primary-mid);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.55);
+}
+
+[data-md-color-scheme="default"] .news-timeline p:has(> strong:first-child)::before {
+  content: '';
+  position: absolute;
+  left: calc(-1.6rem - 3.5px);
+  top: 0.45rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
   background: #6366f1;
-  box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.3);
 }
 
-[data-md-color-scheme="default"] .news-date {
+/* Date badge floated to the right */
+.news-timeline p:has(> strong:first-child) code {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-left: auto;
+  padding: 0.15em 0.6em;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+[data-md-color-scheme="slate"] .news-timeline p:has(> strong:first-child) code {
+  color: var(--geo-accent);
+}
+
+[data-md-color-scheme="default"] .news-timeline p:has(> strong:first-child) code {
   color: #0891b2;
+  background: rgba(99, 102, 241, 0.07);
 }
 
-[data-md-color-scheme="default"] .news-item p:first-of-type strong {
-  color: rgba(0, 0, 0, 0.85);
+/* Description paragraphs */
+[data-md-color-scheme="slate"] .news-timeline p + p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.65;
 }
 
-[data-md-color-scheme="default"] .news-item p + p {
+[data-md-color-scheme="default"] .news-timeline p + p {
+  font-size: 0.875rem;
   color: rgba(0, 0, 0, 0.55);
+  line-height: 1.65;
+}
+
+/* Invisible hr spacers between entries */
+.news-timeline hr {
+  border: none;
+  margin: 1.25rem 0;
 }
