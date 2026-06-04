@@ -5,5 +5,15 @@ site_url: https://mehmetyamac.github.io/GeometricAI/
 theme:
   name: material
 
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
 nav:
   - Home: index.md
