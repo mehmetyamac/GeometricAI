@@ -1,0 +1,9 @@
+site_name: GeometricAI
+site_description: GeometricAI Documentation Portal
+site_url: https://mehmetyamac.github.io/GeometricAI/
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
