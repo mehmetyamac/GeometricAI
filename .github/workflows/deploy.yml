@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write   # required for pushing gh-pages branch
+  contents: write  
 
 jobs:
   deploy:

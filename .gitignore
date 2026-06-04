@@ -16,6 +16,9 @@ dist/
 # MkDocs generated site
 site/
 
+# Claude Code
+.claude/
+
 # IDEs
 .vscode/
 .idea/
